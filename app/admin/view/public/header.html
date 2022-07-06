@@ -1,0 +1,44 @@
+<header class="lyear-layout-header">
+    <nav class="navbar navbar-default">
+        <div class="topbar">
+            <div class="topbar-left">
+                <div class="lyear-aside-toggler">
+                    <span class="lyear-toggler-bar"></span>
+                    <span class="lyear-toggler-bar"></span>
+                    <span class="lyear-toggler-bar"></span>
+                </div>
+                <span class="navbar-page-title">
+                    <!-- 搜索栏 -->
+                    <div class="xf_baidu">
+                        <form action="http://www.baidu.com/baidu" target="_blank">
+                            <input type="text" name="word" size="30" autocomplete="off" placeholder="百度一下 小枫网络">
+                            <i class="iconfont .icon-sousuo"></i>
+                            <input type="submit">
+                        </form>
+                    </div>
+                </span>
+            </div>
+            <div class="topbar-right">
+                <li class="dropdown dropdown-profile">
+                    <a href="javascript:void(0)" data-toggle="dropdown">
+                        <img class="img-avatar img-avatar-48 m-r-10 img-avatar-xf" src="{$user['head_portrait']}" alt="{$user['name']}" />
+                        <span style="font-size: 1.5em; color: #6d85c1;"> {$user['name']} <span
+                                class="caret"></span></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li> <a href="{:url('admin/information/index')}"><i class="mdi mdi-account"></i> 个人信息</a></li>
+                        <li> <a href="{:url('admin/password/index')}"><i class="mdi mdi-lock-outline"></i> 修改密码</a> </li>
+                        <li> <a href="javascript:void(0)"><i class="mdi mdi-delete"></i> 清空缓存</a></li>
+                        <li class="divider"></li>
+                        <li> <a href="{:url('admin/tuichu/index')}"><i class="mdi mdi-logout-variant"></i>退出登录</a> </li>
+                    </ul>
+                </li>
+                <!-- 联系QQ -->
+                <a class="lianxiqq" href="http://wpa.qq.com/msgrd?v=3&uin=1809185784&site=qq&menu=yes"
+                    target="_blank">
+                    <img src="/admin/assets/images/QQ-xf.png" alt="联系QQ">
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>

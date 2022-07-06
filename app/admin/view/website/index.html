@@ -1,0 +1,162 @@
+<!--
+拟态UI4.0个人主页设计
+博客：www.xfwl.club
+作者：小枫
+QQ：180918574
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>旗下站点 - {$system['sitename']}后台管理系统</title>
+    <link rel="shortcut icon" href="https://www.xfwl.club/favicon.ico" type="image/ico">
+    <link href="/admin/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/admin/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="/admin/css/style.min.css" rel="stylesheet">
+    <link href="/admin/assets/font/iconfont.css" rel="stylesheet">
+    <link href="/admin/assets/css/main.css" rel="stylesheet">
+    <link href="/admin/assets/css/style.css" rel="stylesheet">
+    <style>
+        .nav-tabs>li.active>a,
+        .nav-tabs>li.active>a:focus,
+        .nav-tabs>li.active>a:hover {
+            color: var(--primary);
+            font-weight: 700;
+            border-bottom: none;
+        }
+
+        .title_font {
+            font-size: 1.3em;
+        }
+
+        .table>tbody>tr>td,
+        .table>tbody>tr>th,
+        .table>tfoot>tr>td,
+        .table>tfoot>tr>th,
+        .table>thead>tr>td,
+        .table>thead>tr>th {
+            border: none;
+        }
+
+        .table-bordered>tbody>tr>td,
+        .table-bordered>tbody>tr>th,
+        .table-bordered>tfoot>tr>td,
+        .table-bordered>tfoot>tr>th,
+        .table-bordered>thead>tr>td,
+        .table-bordered>thead>tr>th {
+            border-bottom: 1px solid var(--greyLight-2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="lyear-layout-web">
+        <div class="lyear-layout-container">
+            <!--左侧导航-->
+            {include file="public/nav"/}
+            <!--End 左侧导航-->
+            <!--头部信息-->
+            {include file="public/header"/}
+            <!--End 头部信息-->
+            <!--页面主要内容-->
+            <main class="lyear-layout-content">
+                <div class="container-fluid">
+                    <!-- 添加站点 -->
+                    <div class="col-md-12">
+                        <div class="card xf_mimic_outer">
+                            <div class="card-header">
+                                <h4 style="color: var(--primary); font-size: 1.8em; font-weight: 700;">添加站点</h4>
+                            </div>
+                            <div class="card-body">
+
+                                <form  action="{:url('admin/website/forms')}" method="post">
+                                    <div class="form-group">
+                                        <label for="example-website-name" style="font-size: 1.3em;">网站名称</label>
+                                        <input class="form-control" type="text" id="example-website-name"
+                                            name="name" placeholder="请输入你的站点名称" value="小枫网络">
+                                        <small class="help-block">站点名称</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="example-website-links" style="font-size: 1.3em;">网站链接</label>
+                                        <input class="form-control" type="text" id="example-website-links"
+                                            name="url" placeholder="请输入你的网站链接" value="http://www.xfwl.club">
+                                        <small class="help-block">例如：http://www.xfwl.club</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-purple" type="submit">添 加</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 网站列表 -->
+                    <div class="col-md-12">
+                        <div class="card-body xf_mimic_outer">
+                            <div class="card-toolbar clearfix" style="padding: 5px 0;">
+                                <div class="toolbar-btn-action">
+                                    <a class="btn btn-warning" href="#!" style="background-color: #faa64b;"><i class="mdi mdi-check"></i>保存</a>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr class="title_font" style="color: var(--text-a-hover);">
+                                            <th>编号</th>
+                                            <th>网站名称</th>
+                                            <th>网站链接</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody style="font-size: 1.1em;">
+                                        {volist name="data" id="v"}
+                                            <tr>
+                                                <td>{$v['id']}</td>
+                                                <td>{$v['name']}</td>
+                                                <td>{$v['url']}</td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <a class="btn btn-xs btn-default" onclick="OpenDel('{$v['id']}')" href="javascript:;" title=""
+                                                            data-toggle="tooltip" data-original-title="删除"><i class="mdi mdi-window-close"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        {/volist}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 底部版权 -->
+                    {include file="public/footer"/}
+                </div>
+            </main>
+            <!--End 页面主要内容-->
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/admin/assets/js/script.js"></script>
+    <script type="text/javascript" src="/admin/js/jquery.min.js_3.1.5.js"></script>r
+    <script type="text/javascript" src="/admin/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/admin/js/perfect-scrollbar.min.js"></script>
+    <script type="text/javascript" src="/admin/js/main.min.js"></script>
+    <script src="/assets/js/fireworks.js"></script>
+    <script type="text/javascript">
+        function OpenDel(id){
+            if (confirm("确定要删除吗？")) {
+                $.post("{:url('admin/website/del')}",{id : id},function(ret){
+                    if(ret.status == 200){
+                        alert(ret.msg);
+                        window.location.reload();
+                    }else{
+                        alert(ret.msg)
+                    }
+                },'json');
+            }
+        }
+    </script>
+</body>
+
+</html>

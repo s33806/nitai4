@@ -1,0 +1,267 @@
+<!--
+拟态UI4.0个人主页设计
+博客：www.xfwl.club
+作者：小枫
+QQ：180918574
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>我的信息 - {$system['sitename']}后台管理系统</title>
+    <link rel="shortcut icon" href="https://www.xfwl.club/favicon.ico" type="image/ico">
+    <link href="/admin/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/admin/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="/admin/css/style.min.css" rel="stylesheet">
+    <link href="/admin/assets/font/iconfont.css" rel="stylesheet">
+    <link href="/admin/assets/css/main.css" rel="stylesheet">
+    <link href="/admin/assets/css/style.css" rel="stylesheet">
+    <style>
+        .nav-tabs>li.active>a,
+        .nav-tabs>li.active>a:focus,
+        .nav-tabs>li.active>a:hover {
+            color: var(--primary);
+            font-weight: 700;
+            border-bottom: none;
+        }
+
+        .title_font {
+            font-size: 1.3em;
+        }
+
+        .table>tbody>tr>td,
+        .table>tbody>tr>th,
+        .table>tfoot>tr>td,
+        .table>tfoot>tr>th,
+        .table>thead>tr>td,
+        .table>thead>tr>th {
+            border: none;
+        }
+
+        .table-bordered>tbody>tr>td,
+        .table-bordered>tbody>tr>th,
+        .table-bordered>tfoot>tr>td,
+        .table-bordered>tfoot>tr>th,
+        .table-bordered>thead>tr>td,
+        .table-bordered>thead>tr>th {
+            border-bottom: 1px solid var(--greyLight-2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="lyear-layout-web">
+        <div class="lyear-layout-container">
+            <!--左侧导航-->
+            {include file="public/nav"/}
+            <!--End 左侧导航-->
+            <!--头部信息-->
+            {include file="public/header"/}
+            <!--End 头部信息-->
+            <!--页面主要内容-->
+            <main class="lyear-layout-content">
+                <div class="container-fluid">
+                    <!-- 主要信息 -->
+                    <div class="col-md-5">
+                        <div class="card xf_mimic_outer">
+                            <div class="card-header">
+                                <h4 style="color: var(--primary); font-size: 1.8em; font-weight: 700;">个人信息</h4>
+                            </div>
+                            <div class="card-body">
+                                <form class="form-horizontal" action="{:url('admin/information/info_forms')}" method="post" enctype="multipart/form-data">
+                                    <label class="title_font" for="web_site_avatar">头像展示<small class="help-block" style="display: inline-block; font-size: 10px; color: red;">图片大小必须是1:1（最佳尺寸500px*500px）</small></label>
+                                    <div class="input-group">
+                                        <input type="file" onchange="getFilePath()" style="filter:alpha(opacity=0);opacity:0; 0;height: 0;" name="image" id="file">
+                                        <input type="text" value="{$user['head_portrait']}" class="form-control" name="head_portrait" id="web_site_avatar"/>
+                                        <div class="input-group-btn">
+                                            <button onclick="selectFile()" class="btn btn-purple" type="button" style="border-radius: 0 5px 5px 0;">上传图片</button>
+                                            <div class="help-block"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-xs-12 title_font" for="example-zyname-input">主页名称</label>
+                                        <div class="col-xs-12">
+                                            <input class="form-control xf_mimic_internal" type="text"
+                                                id="example-zyname-input" value="{$user['home_page_name']}" name="home_page_name" placeholder="填写首页名称">
+                                            <div class="help-block">首页展示的名称</div>
+                                        </div>
+                                        <label class="col-xs-12 title_font" for="example-jieshao-input">关于介绍</label>
+                                        <div class="col-xs-12">
+                                            <textarea class="form-control xf_mimic_internal" id="example-textarea-input-jieshao"
+                                                name="introduce" rows="5" placeholder="填写介绍自己的一段话">{$user['introduce']}</textarea>
+                                            <div class="help-block">写一段介绍自己的话</div>
+                                        </div>
+                                        <label class="col-xs-12 title_font" for="example-name-input">姓名</label>
+                                        <div class="col-xs-12">
+                                            <input class="form-control xf_mimic_internal" type="text"
+                                                id="example-name-input" value="{$user['name']}" name="name"
+                                                placeholder="填写你的姓名">
+                                            <div class="help-block">请填写真实名字！</div>
+                                        </div>
+                                        <label class="col-xs-12 title_font" for="example-age-input">年龄</label>
+                                        <div class="col-xs-12">
+                                            <input class="form-control xf_mimic_internal" type="text" id="example-age-input"value="{$user['age']}" name="age" placeholder="填写你的年龄"/>
+                                            <div class="help-block">请填写真实年龄！</div>
+                                        </div>
+                                        <label class="col-xs-12 title_font" for="example-coordinate-input">坐标</label>
+                                        <div class="col-xs-12">
+                                            <input class="form-control xf_mimic_internal" type="text" id="example-coordinate-input" value="{$user['coordinate']}" name="coordinate"placeholder="填写你所在的地区"/>
+                                            <div class="help-block">请填写真实坐标！</div>
+                                        </div>
+                                        <label class="col-xs-12 title_font" for="example-Hobby-input">爱好</label>
+                                        <div class="col-xs-12">
+                                            <input class="form-control xf_mimic_internal" type="text" id="example-Hobby-input" value="{$user['hobby']}" name="hobby" placeholder="填写你的爱好"/>
+                                            <div class="help-block">爱好什么呢</div>
+                                        </div>
+                                        <label class="col-xs-12 title_font" for="example-QQ-input">联系QQ</label>
+                                        <div class="col-xs-12">
+                                            <input class="form-control xf_mimic_internal" type="text"
+                                                id="example-QQ-input" value="{$user['qq']}" name="qq" placeholder="填写你的QQ号"/>
+                                            <div class="help-block" style="color: transparent; margin-top: -13px;">123
+                                            </div>
+                                        </div>
+                                        <label class="col-xs-12 title_font" for="web_site_weixin">微信二维码</label>
+                                        <div class="col-xs-12">
+                                            <div class="input-group">
+                                                <input type="file" onchange="getFilePaths()" style="filter:alpha(opacity=0);opacity:0; 0;height: 0;" name="images" id="files">
+                                                <input type="text" class="form-control" name="wx" id="web_site_weixin" value="{$user['wx']}"/>
+                                                <div class="input-group-btn">
+                                                    <button onclick="selectFiles()" class="btn btn-purple" type="button" style="border-radius: 0 5px 5px 0;">上传图片</button>
+                                                    <div class="help-block" style="color: transparent;">123</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <label class="col-xs-12 title_font" for="example-bilibili-input">bilibili</label>
+                                        <div class="col-xs-12">
+                                            <input class="form-control xf_mimic_internal" type="text" id="example-bilibili-input"
+                                                value="{$user['bilibili']}" name="bilibili" placeholder="你的bilibili主页"/>
+                                            <div class="help-block" style="color: transparent; margin-top: -18px;">123
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-xs-12">
+                                            <button class="btn btn-warning" type="submit"><i class="mdi mdi-check"></i>保存</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 专业技能 -->
+                    <div class="col-md-7">
+                        <div class="card xf_mimic_outer">
+                            <div class="card-header">
+                                <h4 style="color: var(--primary); font-size: 1.8em; font-weight: 700;">专业技能</h4>
+                            </div>
+                            <div class="card-body">
+                                <form action="{:url('admin/information/elements_forms')}" method="post">
+                                    <div class="form-group">
+                                        <label for="example-nf-Skill" style="font-size: 1.3em;">你会的技能</label>
+                                        <input class="form-control" type="text" id="example-nf-Skill" name="name" placeholder="请输入你的专业技能"/>
+                                        <small class="help-block">例如Photoshop</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="example-nf-skilled" style="font-size: 1.3em;">技能的熟练度</label>
+                                        <input class="form-control" type="text" id="example-nf-skilled" name="proficiency" placeholder="请输入你对技能的掌握程度" onkeyup="value=value.replace(/[^\%\%\0-9\$]/g,'')" maxlength="4"/>
+                                        <small class="help-block">只能输入百分比并且不能超过4个字符</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="example-nf-skilled" style="font-size: 1.3em;">对该技能的评价</label>
+                                        <input class="form-control" type="text" id="example-nf-skilled" name="evaluate" placeholder="请输入你对对该技能的评价" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" type="hidden" name="uid" value="{$user['id']}"/>
+                                        <button class="btn btn-purple" type="submit">添 加</button>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 技能表格 -->
+                    <div class="col-md-7">
+                        <div class="card-body xf_mimic_outer">
+                            <div class="card-toolbar clearfix" style="padding: 5px 0;">
+                                <div class="toolbar-btn-action">
+                                    <a class="btn btn-warning" href="#!" style="background-color: #faa64b;"><i class="mdi mdi-check"></i>保存</a>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr class="title_font" style="color: var(--text-a-hover);">
+                                            <th>编号</th>
+                                            <th>技能名称</th>
+                                            <th>熟练程度</th>
+                                            <th>评价</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody style="font-size: 1.1em;">
+                                        {volist name="data" id="v"}
+                                            <tr>
+                                                <td>{$v['id']}</td>
+                                                <td>{$v['name']}</td>
+                                                <td>{$v['proficiency']}</td>
+                                                <td>{$v['evaluate']}</td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <a class="btn btn-xs btn-default" onclick="OpenDel('{$v['id']}')" href="javascript:;" title=""  data-toggle="tooltip" data-original-title="删除"><i class="mdi mdi-window-close"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        {/volist}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 底部版权 -->
+                    {include file="public/footer"/}
+                </div>
+            </main>
+            <!--End 页面主要内容-->
+        </div>
+    </div>
+    <script src="/assets/js/fireworks.js"></script>
+    <script type="text/javascript" src="/admin/assets/js/script.js"></script>
+    <script type="text/javascript" src="/admin/js/jquery.min.js_3.1.5.js"></script>r
+    <script type="text/javascript" src="/admin/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/admin/js/perfect-scrollbar.min.js"></script>
+    <script type="text/javascript" src="/admin/js/main.min.js"></script>
+    <script type="text/javascript">
+        function OpenDel(id){
+            if (confirm("确定要删除吗？")) {
+                $.post("{:url('admin/information/del')}",{id : id},function(ret){
+                    if(ret.status == 200){
+                        alert(ret.msg);
+                        window.location.reload();
+                    }else{
+                        alert(ret.msg)
+                    }
+                },'json');
+            }
+        }
+        function selectFile(){  
+            $("#file").trigger("click");  
+        }  
+        function getFilePath(){  
+           var site_logo = $("#file").val();  
+           $("#web_site_avatar").val(site_logo);
+        }  
+        function selectFiles(){  
+            $("#files").trigger("click");  
+        }  
+        function getFilePaths(){  
+           var web_site_weixin = $("#files").val();  
+           $("#web_site_weixin").val(web_site_weixin);
+        }  
+    </script>
+</body>
+
+</html>

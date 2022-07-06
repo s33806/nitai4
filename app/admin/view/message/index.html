@@ -1,0 +1,191 @@
+<!--
+拟态UI4.0个人主页设计
+博客：www.xfwl.club
+作者：小枫
+QQ：180918574
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>留言列表 - {$system['sitename']}后台管理系统</title>
+    <link rel="shortcut icon" href="https://www.xfwl.club/favicon.ico" type="image/ico">
+    <link href="/admin/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/admin/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="/admin/css/style.min.css" rel="stylesheet">
+    <link href="/admin/assets/font/iconfont.css" rel="stylesheet">
+    <link href="/admin/assets/css/main.css" rel="stylesheet">
+    <link href="/admin/assets/css/style.css" rel="stylesheet">
+    <style>
+        .nav-tabs>li.active>a,
+        .nav-tabs>li.active>a:focus,
+        .nav-tabs>li.active>a:hover {
+            color: var(--primary);
+            font-weight: 700;
+            border-bottom: none;
+        }
+
+        .title_font {
+            font-size: 1.3em;
+        }
+
+        .table>tbody>tr>td,
+        .table>tbody>tr>th,
+        .table>tfoot>tr>td,
+        .table>tfoot>tr>th,
+        .table>thead>tr>td,
+        .table>thead>tr>th {
+            border: none;
+        }
+
+        .table-bordered>tbody>tr>td,
+        .table-bordered>tbody>tr>th,
+        .table-bordered>tfoot>tr>td,
+        .table-bordered>tfoot>tr>th,
+        .table-bordered>thead>tr>td,
+        .table-bordered>thead>tr>th {
+            border-bottom: 1px solid var(--greyLight-2);
+        }
+
+        .lyear-checkbox span::before,
+        .lyear-radio span::before {
+            border: 2px solid var(--greyLight-2) !important;
+        }
+
+        .checkbox-primary input:checked~span::before {
+            background-color: var(--primary);
+        }
+
+        .card-toolbar {
+            padding: 10px 0;
+        }
+
+        .btn-danger {
+            background-color: #f96868 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="lyear-layout-web">
+        <div class="lyear-layout-container">
+            <!--左侧导航-->
+            {include file="public/nav"/}
+            <!--End 左侧导航-->
+            <!--头部信息-->
+            {include file="public/header"/}
+            <!--End 头部信息-->
+            <!--页面主要内容-->
+            <main class="lyear-layout-content">
+                <div class="container-fluid">
+                    <!-- 留言列表 -->
+                    <form action="{:url('admin/message/deletes')}" method="post" class="edit-form" id="forms">
+                    <div class="col-md-12">
+                        <div class="card-body xf_mimic_outer">
+                            <div class="card-toolbar clearfix">
+                                <div class="toolbar-btn-action">
+                                    <a class="btn btn-warning" id='cekall' href="javascript:;" style="background-color: #faa64b;"><i class="mdi mdi-check"></i>保存</a>
+                                    <a class="btn btn-danger" onclick="gtdie()" href="javascript:;"><i class="mdi mdi-window-close"></i>删除</a>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr class="title_font" style="color: var(--text-a-hover);">
+                                            <th>
+                                                <label class="lyear-checkbox checkbox-primary">
+                                                    <input type="checkbox" id="check-all"><span></span>
+                                                </label>
+                                            </th>
+                                            <th>编号</th>
+                                            <th>名称</th>
+                                            <th>QQ邮箱</th>
+                                            <th>留言</th>
+                                            <th>留言日期</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody style="font-size: 1.1em;">
+                                        {volist name="msg" id="v"}
+                                            <tr>
+                                                <td>
+                                                    <label class="lyear-checkbox checkbox-primary">
+                                                        <input type="checkbox" name="ids[]" value="{$v['id']}"><span></span>
+                                                    </label>
+                                                </td>
+                                                <td>{$v['id']}</td>
+                                                <td>{$v['name']}</td>
+                                                <td>{$v['email']}</td>
+                                                <td>{$v['msg']}</td>
+                                                <td>{$v['addtime']|date='Y-m-d H:i:s'}</td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <a class="btn btn-xs btn-default" onclick="OpenDel('{$v['id']}')" href="javascript:;" title=""
+                                                            data-toggle="tooltip" data-original-title="删除"><i class="mdi mdi-window-close"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        {/volist}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                    <!-- 底部版权 -->
+                    {include file="public/footer"/}
+                </div>
+            </main>
+            <!--End 页面主要内容-->
+        </div>
+    </div>
+    <script type="text/javascript" src="/assets/js/script.js"></script>
+    <script type="text/javascript" src="/admin/js/jquery.min.js_3.1.5.js"></script>r
+    <script type="text/javascript" src="/admin/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/admin/js/perfect-scrollbar.min.js"></script>
+    <script type="text/javascript" src="/admin/js/main.min.js"></script>
+    <script src="/assets/js/fireworks.js"></script>
+    <script type="text/javascript">
+        // 1、全选和取消全选做法：让下面所有复选框的 checked属性（选中状态）跟随全选按钮即可
+        // 获取元素，获取全选按钮和下面小的复选框
+        var cekall = document.getElementById('cekall');
+        var inp = document.querySelector('tbody').getElementsByTagName('input');
+        // 注册事件
+        cekall.onclick = function(){
+            console.log(this.checked);
+            for(var i=0; i< inp.length; i++){
+                inp[i].checked = true;
+            }
+        }
+        for(var i = 0; i<inp.length; i++){
+            inp[i].onclick = function(){
+                var flag = true;
+                for(var i =0; i<inp.length; i++){
+                    if(!inp[i].checked){
+                        flag = false;
+                        }
+                    }
+                cekall.checked = flag;
+            }
+        }
+        function OpenDel(id){
+            if (confirm("确定要删除吗？")) {
+                $.post("{:url('admin/message/del')}",{id : id},function(ret){
+                    if(ret.status == 200){
+                        alert(ret.msg);
+                        window.location.reload();
+                    }else{
+                        alert(ret.msg)
+                    }
+                },'json');
+            }
+        }
+        function gtdie(){
+            $("#forms").submit();
+        } 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+[2022-06-16T08:32:51+08:00][error] [0]Class 'app\admin\controller\View' not found
+[2022-06-16T08:33:14+08:00][error] [0]Driver [Think] not supported.
+[2022-06-16T08:33:29+08:00][error] [0]Class 'app\admin\controller\BaseController' not found
+[2022-06-16T08:33:38+08:00][error] [0]Driver [Think] not supported.
+[2022-06-16T08:34:29+08:00][error] [0]Class 'app\admin\controller\BaseController' not found
+[2022-06-16T08:34:49+08:00][error] [0]Driver [Think] not supported.
+[2022-06-16T08:37:27+08:00][error] [0]Driver [Think] not supported.
+[2022-06-16T08:37:29+08:00][error] [0]Driver [Think] not supported.
+[2022-06-16T08:37:30+08:00][error] [0]Driver [Think] not supported.
+[2022-06-16T08:37:38+08:00][error] [0]Driver [Think] not supported.
+[2022-06-16T08:37:38+08:00][error] [0]Driver [Think] not supported.
+[2022-06-16T08:37:39+08:00][error] [0]Driver [Think] not supported.
+[2022-06-16T08:38:39+08:00][error] [0]模板文件不存在:/www/wwwroot/cs.api-yun.top/app/admin/view/index/index.html
+[2022-06-16T08:38:50+08:00][error] [0]模板文件不存在:/www/wwwroot/cs.api-yun.top/app/admin/view/index/index.html
+[2022-06-16T08:44:31+08:00][error] [0]模板文件不存在:/www/wwwroot/cs.api-yun.top/app/admin/view/login/index.html
+[2022-06-16T08:49:43+08:00][error] [0]模板文件不存在:/www/wwwroot/cs.api-yun.top/app/admin/view/Index/index.html
+[2022-06-16T08:52:25+08:00][error] [0]模板文件不存在:/www/wwwroot/cs.api-yun.top/app/admin/view/website/index.html
+[2022-06-16T08:57:14+08:00][error] [0]模板文件不存在:/www/wwwroot/cs.api-yun.top/app/admin/view/password/index.html
+[2022-06-16T09:01:18+08:00][error] [0]模板文件不存在:/www/wwwroot/cs.api-yun.top/app/admin/view/message/index.html
+[2022-06-16T09:04:12+08:00][error] [0]模板文件不存在:/www/wwwroot/cs.api-yun.top/app/admin/view/information/index.html
+[2022-06-16T09:04:34+08:00][error] [0]模板文件不存在:/www/wwwroot/cs.api-yun.top/app/admin/view/information/index.html
+[2022-06-16T09:08:51+08:00][error] [0]模板文件不存在:/www/wwwroot/cs.api-yun.top/app/admin/view/basic/index.html
+[2022-06-16T11:50:23+08:00][sql] CONNECT:[ UseTime:0.001678s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofeng;charset=utf8
+[2022-06-16T11:50:23+08:00][sql] SHOW FULL COLUMNS FROM `xf_system` [ RunTime:0.003079s ]
+[2022-06-16T11:50:23+08:00][sql] SELECT * FROM `xf_system` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001208s ]
+[2022-06-16T11:53:06+08:00][sql] CONNECT:[ UseTime:0.003554s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofeng;charset=utf8
+[2022-06-16T11:53:06+08:00][sql] SHOW FULL COLUMNS FROM `xf_system` [ RunTime:0.003047s ]
+[2022-06-16T11:53:06+08:00][sql] SELECT * FROM `xf_system` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000326s ]
+[2022-06-16T11:54:11+08:00][sql] CONNECT:[ UseTime:0.008009s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofeng;charset=utf8
+[2022-06-16T11:54:11+08:00][sql] SHOW FULL COLUMNS FROM `xf_system` [ RunTime:0.003006s ]
+[2022-06-16T11:54:11+08:00][sql] SELECT * FROM `xf_system` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000310s ]
+[2022-06-16T11:55:46+08:00][sql] CONNECT:[ UseTime:0.007293s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofeng;charset=utf8
+[2022-06-16T11:55:46+08:00][sql] SHOW FULL COLUMNS FROM `xf_system` [ RunTime:0.001555s ]
+[2022-06-16T11:55:46+08:00][sql] SELECT * FROM `xf_system` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000353s ]
+[2022-06-16T12:04:23+08:00][sql] CONNECT:[ UseTime:0.005358s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofeng;charset=utf8
+[2022-06-16T12:04:23+08:00][sql] SHOW FULL COLUMNS FROM `xf_system` [ RunTime:0.002327s ]
+[2022-06-16T12:04:23+08:00][sql] SELECT * FROM `xf_system` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000295s ]
+[2022-06-16T12:04:23+08:00][error] [2]popen() has been disabled for security reasons
+[2022-06-16T12:05:14+08:00][sql] CONNECT:[ UseTime:0.003527s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofeng;charset=utf8
+[2022-06-16T12:05:14+08:00][sql] SHOW FULL COLUMNS FROM `xf_system` [ RunTime:0.002538s ]
+[2022-06-16T12:05:14+08:00][sql] SELECT * FROM `xf_system` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000398s ]
+[2022-06-16T12:05:14+08:00][error] [8]未定义数组下标: 3
+[2022-06-16T12:05:47+08:00][sql] CONNECT:[ UseTime:0.006666s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofeng;charset=utf8
+[2022-06-16T12:05:47+08:00][sql] SHOW FULL COLUMNS FROM `xf_system` [ RunTime:0.001748s ]
+[2022-06-16T12:05:47+08:00][sql] SELECT * FROM `xf_system` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000351s ]
+[2022-06-16T12:05:47+08:00][error] [8]未定义数组下标: 3
+[2022-06-16T12:06:34+08:00][sql] CONNECT:[ UseTime:0.006267s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofeng;charset=utf8
+[2022-06-16T12:06:34+08:00][sql] SHOW FULL COLUMNS FROM `xf_system` [ RunTime:0.001794s ]
+[2022-06-16T12:06:34+08:00][sql] SELECT * FROM `xf_system` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000331s ]
+[2022-06-16T12:06:42+08:00][sql] CONNECT:[ UseTime:0.021119s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofeng;charset=utf8
+[2022-06-16T12:06:42+08:00][sql] SHOW FULL COLUMNS FROM `xf_system` [ RunTime:0.002453s ]
+[2022-06-16T12:06:42+08:00][sql] SELECT * FROM `xf_system` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000353s ]
+[2022-06-16T12:06:45+08:00][sql] CONNECT:[ UseTime:0.009176s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofeng;charset=utf8
+[2022-06-16T12:06:45+08:00][sql] SHOW FULL COLUMNS FROM `xf_system` [ RunTime:0.002942s ]
+[2022-06-16T12:06:45+08:00][sql] SELECT * FROM `xf_system` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000344s ]
+[2022-06-16T12:06:48+08:00][sql] CONNECT:[ UseTime:0.005168s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofeng;charset=utf8
+[2022-06-16T12:06:48+08:00][sql] SHOW FULL COLUMNS FROM `xf_system` [ RunTime:0.001599s ]
+[2022-06-16T12:06:48+08:00][sql] SELECT * FROM `xf_system` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000301s ]
+[2022-06-16T12:06:49+08:00][sql] CONNECT:[ UseTime:0.005870s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofeng;charset=utf8
+[2022-06-16T12:06:49+08:00][sql] SHOW FULL COLUMNS FROM `xf_system` [ RunTime:0.003411s ]
+[2022-06-16T12:06:49+08:00][sql] SELECT * FROM `xf_system` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000316s ]
+[2022-06-16T12:06:50+08:00][sql] CONNECT:[ UseTime:0.006213s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofeng;charset=utf8
+[2022-06-16T12:06:50+08:00][sql] SHOW FULL COLUMNS FROM `xf_system` [ RunTime:0.001811s ]
+[2022-06-16T12:06:50+08:00][sql] SELECT * FROM `xf_system` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000351s ]
+[2022-06-16T12:06:50+08:00][sql] CONNECT:[ UseTime:0.033080s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofeng;charset=utf8
+[2022-06-16T12:06:50+08:00][sql] SHOW FULL COLUMNS FROM `xf_system` [ RunTime:0.025169s ]
+[2022-06-16T12:06:50+08:00][sql] SELECT * FROM `xf_system` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.009784s ]
+[2022-06-16T12:06:54+08:00][sql] CONNECT:[ UseTime:0.006883s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofeng;charset=utf8
+[2022-06-16T12:06:54+08:00][sql] SHOW FULL COLUMNS FROM `xf_system` [ RunTime:0.001814s ]
+[2022-06-16T12:06:54+08:00][sql] SELECT * FROM `xf_system` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000375s ]
+[2022-06-16T12:06:57+08:00][sql] CONNECT:[ UseTime:0.008163s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofeng;charset=utf8
+[2022-06-16T12:06:57+08:00][sql] SHOW FULL COLUMNS FROM `xf_system` [ RunTime:0.002400s ]
+[2022-06-16T12:06:57+08:00][sql] SELECT * FROM `xf_system` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000378s ]
+[2022-06-16T12:06:59+08:00][sql] CONNECT:[ UseTime:0.004059s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofeng;charset=utf8
+[2022-06-16T12:06:59+08:00][sql] SHOW FULL COLUMNS FROM `xf_system` [ RunTime:0.005612s ]
+[2022-06-16T12:06:59+08:00][sql] SELECT * FROM `xf_system` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000411s ]
+[2022-06-16T12:06:59+08:00][sql] CONNECT:[ UseTime:0.002589s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofeng;charset=utf8
+[2022-06-16T12:06:59+08:00][sql] SHOW FULL COLUMNS FROM `xf_system` [ RunTime:0.002766s ]
+[2022-06-16T12:06:59+08:00][sql] SELECT * FROM `xf_system` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000401s ]
+[2022-06-16T12:07:01+08:00][sql] CONNECT:[ UseTime:0.005287s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofeng;charset=utf8
+[2022-06-16T12:07:01+08:00][sql] SHOW FULL COLUMNS FROM `xf_system` [ RunTime:0.001774s ]
+[2022-06-16T12:07:01+08:00][sql] SELECT * FROM `xf_system` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000337s ]
+[2022-06-16T17:36:39+08:00][sql] CONNECT:[ UseTime:0.008181s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofeng;charset=utf8
+[2022-06-16T17:36:39+08:00][sql] SHOW FULL COLUMNS FROM `xf_system` [ RunTime:0.001700s ]
+[2022-06-16T17:36:39+08:00][sql] SELECT * FROM `xf_system` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000333s ]
+[2022-06-16T19:11:37+08:00][sql] CONNECT:[ UseTime:0.003998s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofeng;charset=utf8
+[2022-06-16T19:11:37+08:00][sql] SHOW FULL COLUMNS FROM `xf_system` [ RunTime:0.001734s ]
+[2022-06-16T19:11:37+08:00][sql] SELECT * FROM `xf_system` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000337s ]
+[2022-06-16T19:15:13+08:00][sql] CONNECT:[ UseTime:0.001781s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofeng;charset=utf8
+[2022-06-16T19:15:13+08:00][sql] SHOW FULL COLUMNS FROM `xf_system` [ RunTime:0.001458s ]
+[2022-06-16T19:15:13+08:00][sql] SELECT * FROM `xf_system` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000340s ]

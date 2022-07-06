@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "Impact";
+    src: url("Impact.eot"); /* IE9 */
+    src: url("Impact.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    
+    url("Impact.woff") format("woff"), /* chrome、firefox */
+    url("Impact.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+    
+    url("Impact.svg#Impact") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}
+
+

@@ -1,0 +1,32 @@
+<aside class="lyear-layout-sidebar">
+    <!-- logo -->
+    <div id="logo" class="sidebar-header">
+        <a href="https://www.xfwl.club">
+            <img src="/admin/assets/images/xf_logo.png" alt="小枫拟态UI4.0" />
+        </a>
+    </div>
+    <div class="lyear-layout-sidebar-scroll">
+
+        <nav class="sidebar-main">
+            <ul class="nav nav-drawer">
+                <li class="nav-item {if $moduleName == 'Index'}active{/if}"> <a href="{:url('admin/index/index')}"><i class="mdi mdi-home"></i>后台首页</a></li>
+                <li class="nav-item {if $moduleName == 'Basic'}active{/if}">
+                    <a href="{:url('admin/basic/index')}"><i class="iconfont icon-jichushezhi"></i>基础设置</a>
+                </li>
+                <li class="nav-item {if $moduleName == 'Information'}active{/if}">
+                    <a href="{:url('admin/information/index')}"><i class="iconfont icon-gerenxinxi"></i>我的信息</a>
+                </li>
+                <li class="nav-item {if $moduleName == 'Website'}active{/if}">
+                    <a href="{:url('admin/website/index')}"><i class="iconfont icon-zhandianditu"></i>旗下站点</a>
+                </li>
+                <li class="nav-item {if $moduleName == 'Message'}active{/if}">
+                    <a href="{:url('admin/message/index')}"><i class="iconfont icon-liuyan"></i>留言列表</a>
+                </li>
+                <li class="nav-item {if $moduleName == 'Friendship'}active{/if}">
+                    <a href="{:url('admin/friendship/index')}"><i class="iconfont icon-youqinglianjie"></i>友情链接</a>
+                </li>
+            </ul>
+        </nav>
+        <img src="/admin/assets/images/paper_airplane.png" alt="纸飞机">
+    </div>
+</aside>
